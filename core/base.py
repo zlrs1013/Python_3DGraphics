@@ -1,5 +1,5 @@
 """
-
+    initialize window
     file:base.py
 """
 
