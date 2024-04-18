@@ -52,16 +52,16 @@ class Test(Base):
         glBindVertexArray(self.vaoTri)
 
         # set up vertex attribute
-        positionDataTri = [[-0.5, 0.8, 0.0],
-                        [-0.2, 0.2, 0.0],
-                        [-0.8, 0.2, 0.0]]
+        positionDataTri = [[-0.2, 0.2, 0.0],
+                           [-0.5, 0.8, 0.0],
+                           [-0.8, 0.2, 0.0]]
 
         positionAttributeTri = Attribute("vec3", positionDataTri)
         # set up variable association that'll be stored in the VAO that's
         # currently bound
         positionAttributeTri.associateVariable(self.programRef, "position")
 
-        self.vertexCount = len(positionDataTri)
+        self.vertexCountTri = len(positionDataTri)
 
         # set up square
         self.vaoSq = glGenVertexArrays(1)
@@ -69,8 +69,8 @@ class Test(Base):
 
         # set up vertex attribute
         positionDataSq = [[0.8, 0.8, 0.0],
-                           [0.8, 0.2, 0.0],
-                           [0.2, 0.2, 0.0],
+                          [0.8, 0.2, 0.0],
+                          [0.2, 0.2, 0.0],
                           [0.2, 0.8, 0.0]]
 
         positionAttributeSq = Attribute("vec3", positionDataSq)
@@ -78,12 +78,16 @@ class Test(Base):
         # currently bound
         positionAttributeSq.associateVariable(self.programRef, "position")
 
-        self.vertexCount = len(positionDataSq)
+        self.vertexCountSq = len(positionDataSq)
 
     def update(self):
         glUseProgram(self.programRef)
-        # Draw mode GL_LINE_LOOP connects each dot to next dot
-        glDrawArrays(GL_TRIANGLE_FAN, 0, self.vertexCount)
+
+        glBindVertexArray(self.vaoTri)
+        glDrawArrays(GL_LINE_LOOP, 0, self.vertexCountTri)
+
+        glBindVertexArray(self.vaoSq)
+        glDrawArrays(GL_LINE_LOOP, 0, self.vertexCountSq)
 
 
 # create an instance and run
