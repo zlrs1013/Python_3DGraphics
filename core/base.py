@@ -20,6 +20,14 @@ class Base(object):
         # indicate rendering options. | combines the two constants
         displayFlags = pygame.DOUBLEBUF | pygame.OPENGL
 
+        # initialize buffers to perform antialising
+        pygame.display.gl_set_attribute(pygame.GL_MULTISAMPLEBUFFERS, 1)
+        pygame.display.gl_set_attribute(pygame.GL_MULTISAMPLEBUFFERS, 4)
+
+        # use a core OpenGl profile for cross-platform compatibility
+        pygame.display.gl_set_attribute(pygame.GL_CONTEXT_PROFILE_MASK,
+                                        pygame.GL_CONTEXT_PROFILE_CORE)
+
         # create and display the window
         self.screen = pygame.display.set_mode(screenSize, displayFlags)
 

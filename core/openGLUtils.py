@@ -13,8 +13,8 @@ class OpenGLUtils(object):
     @staticmethod
     def initializeShader(shaderCode, shaderType):
         # specify OpenGL version and requirements
-        extension = "#extension GL_ARB_shading_language_420pack: require \n"
-        shaderCode = "#version 130 \n " + extension + shaderCode
+        # extension = "#extension GL_ARB_shading_language_420pack: require \n"
+        shaderCode = "#version 330 \n " + shaderCode
 
         # create empty shader object and return the reference value
         shaderRef = GL.glCreateShader(shaderType)
@@ -77,3 +77,19 @@ class OpenGLUtils(object):
 
         # linking was successful
         return programRef
+
+#     @staticmethod
+#     def printSystemInfo():
+#         print("===================================================")
+#         print(f"vendor: {GL.glGetString(GL.GL_VENDOR).decode("utf-8")}")
+#         print(f"Renderer: {GL.glGetString(GL.GL_RENDERER).decode("utf-8")}")
+#         print(f"OpenGL version supported: "
+#               f"{GL.glGetString(GL.GL_VERSION).decode("utf-8")}")
+#         print(f"GLSL version supported: "
+#               f""
+#               f""
+#               f"{GL.glGetString(GL.GL_SHADING_LANGUAGE_VERSION).decode("utf-8")}")
+#         print("===================================================")
+#
+#
+# print(OpenGLUtils().printSystemInfo())
