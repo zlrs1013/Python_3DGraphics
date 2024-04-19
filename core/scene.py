@@ -1,0 +1,11 @@
+"""
+     Scene class represents root node of scene graph tree.
+"""
+
+from object3D import Object3D
+
+
+class Scene(Object3D):
+
+    def __init__(self):
+        super().__init__()
