@@ -6,8 +6,8 @@
     transform matrix.
 """
 
-from object3D import Object3D
-from matrix import Matrix
+from core.object3D import Object3D
+from core.matrix import Matrix
 from numpy.linalg import inv # calculate inverse of a matrix
 
 

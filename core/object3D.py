@@ -4,7 +4,7 @@
     the basic extensions of this class.
 """
 
-from matrix import Matrix
+from core.matrix import Matrix
 
 
 class Object3D(object):

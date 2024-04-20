@@ -6,7 +6,7 @@
     variables (material).
 """
 
-from object3D import Object3D
+from core.object3D import Object3D
 from OpenGL.GL import *
 
 

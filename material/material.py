@@ -24,8 +24,7 @@ from core.uniform import Uniform
 class Material(object):
 
     def __init__(self, vertexShaderCode, fragmentShaderCode):
-        self.programRef = OpenGLUtils.initializeProgram(
-            vertexShaderCode, fragmentShaderCode)
+        self.programRef = OpenGLUtils.initializeProgram(vertexShaderCode, fragmentShaderCode)
 
         # store uniform objects
         self.uniforms = dict()
@@ -57,7 +56,7 @@ class Material(object):
         if properties is None:
             properties = dict()
 
-        for name,data in properties.items():
+        for name, data in properties.items():
             # update Uniforms
             if name in self.uniforms.keys():
                 self.uniforms[name].data = data
@@ -69,12 +68,3 @@ class Material(object):
             # unknown properties
             else:
                 raise Exception(f"Material has no property: {name}")
-
-    
-
-
-
-
-
-
-
