@@ -1,8 +1,6 @@
 """
     Generate vertex buffer objects(VBOs), upload vertex attribute data to the
-    GPU, and specify associations between data stored in vertex buffers and
-    attribute variables in a vertex shader. Create an attribute class to
-    manage this data and perform these tasks.
+    GPU, and specify associations between data stored
 """
 
 import numpy
