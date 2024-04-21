@@ -5,6 +5,8 @@
     shapes.
 """
 
+from core.attribute import Attribute
+
 
 class Geometry(object):
 
@@ -15,6 +17,9 @@ class Geometry(object):
 
         # number of vertices
         self.vertexCount = None
+
+    def addAttribute(self, dataType, variableName, data):
+        self.attributes[variableName] = Attribute(dataType, data)
 
     def countVertices(self):
         # the number of vertices is the length of any attribute object's

@@ -16,8 +16,9 @@ class RectangleGeometry(Geometry):
         positionData = [P0,P1,P3, P0,P3,P2]
         colorData    = [C0,C1,C3, C0,C3,C2]
 
-        self.attributes["vertexPosition"] = Attribute("vec3", positionData)
-        self.attributes["vertexColor"] = Attribute("vec3", colorData)
+        self.addAttribute("vec3", "vertexPosition", positionData )
+        self.addAttribute("vec3", "vertexColor", colorData )
+
         self.countVertices()
 
 
